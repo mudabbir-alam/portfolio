@@ -8,13 +8,11 @@ function Navbar() {
         setDarkMode(d => !d);
     }
     useEffect(() => {
-        document.documentElement.classList.toggle("dark", darkMode); 
-        console.log("Theme changed");      
+        document.documentElement.classList.toggle("dark", darkMode);     
     }, [darkMode]);
 
     useEffect(() => {
         document.documentElement.classList.add("theme");
-        console.log("Theme Added")
     }, []);
 
     return (
