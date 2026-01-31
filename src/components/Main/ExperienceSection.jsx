@@ -4,7 +4,7 @@ import Experience from "./Experience";
 function ExperienceSection() {
     return (
         <section
-            id="experience"
+            id="experience-section"
             className="flex py-16 flex-col border-b border-b-border"
         >
             <div className="flex gap-3 items-center mb-8 w-full">

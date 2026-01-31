@@ -4,7 +4,7 @@ import TechStackCard from "./TechStackCard";
 function TechStack() {
     return (
         <section
-            id="tech-stack"
+            id="skills"
             className="flex py-16 flex-col border-b border-b-border"
         >
             <div className="flex gap-3 items-center mb-8 w-full">
