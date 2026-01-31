@@ -22,8 +22,6 @@ function Contact() {
         e.preventDefault();
         e.stopPropagation();
 
-        console.log("Submit Clicked");
-
         emailjs
         .send(
             import.meta.env.VITE_EMAIL_SERVICE_ID,
