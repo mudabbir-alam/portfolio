@@ -52,6 +52,8 @@ function Contact() {
                         
                     />
                     <textarea
+                        name="message"
+                        id="message"
                         placeholder="Your message"
                         rows="4"
                         className="col-span-2 bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
