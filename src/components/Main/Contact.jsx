@@ -20,6 +20,9 @@ function Contact() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        e.stopPropagation();
+
+        console.log("Submit Clicked");
 
         emailjs
         .send(
@@ -63,7 +66,7 @@ function Contact() {
                         </span>
                     </div>
                 </div>
-                <form className="contact-right grid grid-cols-2 gap-4" onSubmit={handleSubmit}>
+                <form className="contact-right grid grid-cols-2 gap-4" onSubmit={handleSubmit} noValidate>
                     <input
                         type="text"
                         name="first_name"
