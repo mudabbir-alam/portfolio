@@ -1,0 +1,18 @@
+#0f49bd		Dark-Blue   primary
+#0f49bd1a
+#0f49bd0d	
+
+#0f172a		Black		(slate-900)        #f1f5f9        Light-Gray  Secondary
+#475569		Gray		(slate-600)        #cbd5e1
+
+
+      
+
+#1e293b        
+
+Color            Light          Dark
+-----------------------------------------
+primary:       #0f49bd 
+background:    #f6f6f8      #101622
+foreground:    #0f172a      #f1f5f9  
+border:        #e2e8f0      #1e293b

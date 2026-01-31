@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+    html.theme * {
+        @apply transition-colors duration-300 ease-in-out;
+    }
+}
+
+
+:root {
+    --primary: #0f49bd;
+    --background: #f6f6f8;
+    --foreground: #0f172a;
+    --border: #e2e8f0;
+}
+
+.dark {
+    --background: #101622;
+    --foreground: #f1f5f9;
+    --border: #314158;
+}
+
+@theme inline {
+    --color-primary: var(--primary);
+    --color-background: var(--background);
+    --color-border: var(--border);
+    --color-foreground: var(--foreground);
+}
+
+
+@font-face {
+    font-family: "Material Icons";
+    src: url("./assets/fonts/material_icons_outlined.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter.ttf") format("truetype");
+}
+
+
+.material-symbols-outlined {
+    font-family: "Material Icons";
+}
+
+.font-inter {
+    font-family: "Inter", Arial, sans-serif;
+}
