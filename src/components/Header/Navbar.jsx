@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import Logo from "./Logo.jsx";
 import NavItems from "./NavItems.jsx";
+import { useContext } from "react";
+import { SidebarContext } from "../../App.jsx";
 
 function Navbar() {
     const [darkMode, setDarkMode] = useState(false);
@@ -25,9 +27,9 @@ function Navbar() {
                 <button onClick={toggleTheme} className="flex justify-center items-center bg-background px-2 rounded-lg border border-border hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 w-8 h-8 material-symbols-outlined">
                     {darkMode ? "light_mode" : "dark_mode"}
                 </button>
-                <div className="block md:hidden material-symbols-outlined text-2xl cursor-pointer">
+                <button className="block md:hidden material-symbols-outlined text-2xl cursor-pointer" onClick={useContext(SidebarContext).toggleSidebar}>
                         menu
-                </div>
+                </button>
             </div>
         </div>
     );
