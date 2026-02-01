@@ -1,13 +1,14 @@
 import React from "react";
 
-function NavItems() {
-    const navItems = [
+export const navItems = [
         {name: "About", id: "about"},
         {name: "Skills", id: "skills"},
         {name: "Projects", id: "selected-projects"},
         {name: "Experience", id: "experience-section"},
         {name: "Contact", id: "contact"}
     ];
+
+function NavItems() {
     return (
         <ol className="gap-8 text-sm font-medium hidden md:flex">
             {navItems.map((item, index) => (

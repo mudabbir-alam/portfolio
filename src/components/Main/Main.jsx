@@ -5,6 +5,7 @@ import TechStack from "./TechStack.jsx";
 import SelectedProjects from "./SelectedProjects.jsx";
 import ExperienceSection from "./ExperienceSection.jsx";
 import Contact from "./Contact.jsx";
+import Sidebar from "./Sidebar.jsx";
 
 function Main() {
     return (
@@ -15,6 +16,7 @@ function Main() {
             <SelectedProjects />
             <ExperienceSection />
             <Contact />
+            <Sidebar />
         </main>
     );
 }
