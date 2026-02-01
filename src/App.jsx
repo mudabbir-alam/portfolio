@@ -9,11 +9,16 @@ export const SidebarContext = createContext();
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     useEffect(() => {
+        const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+
         if (isSidebarOpen) {
         document.body.style.overflow = "hidden";
+        document.body.style.paddingRight = `${scrollbarWidth}px`;
         }
         else {
-            document.body.style.overflow = "auto";        }
+            document.body.style.overflow = "auto";
+            document.body.style.paddingRight = "";
+        }
     }, [isSidebarOpen])
 
     function toggleSidebar() {
