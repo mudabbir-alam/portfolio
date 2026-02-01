@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import SidebarOverlay from "./components/Main/SidebarOverlay.jsx";
 import { createContext, useEffect, useState } from "react";
 
 export const SidebarContext = createContext();
@@ -27,11 +28,14 @@ function App() {
 
     return (
         <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
+            <>
+            <SidebarOverlay />
             <div id="body" className="w-full min-h-screen font-inter">
                 <Header />
                 <Main />
                 <Footer />
             </div>
+            </>
         </SidebarContext.Provider>
     );
 }

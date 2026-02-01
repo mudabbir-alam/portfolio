@@ -9,7 +9,7 @@ function Sidebar() {
 
     return (
         <aside
-            className={`w-4/5 h-screen fixed top-0 right-0 bg-white dark:bg-slate-800 z-10 flex flex-col gap-8 ${sidebar.isSidebarOpen ? "translate-x-0" : "translate-x-full"} transition-transform ease-in-out border-l border-border`}
+            className={`w-4/5 h-screen fixed top-0 right-0 bg-white dark:bg-slate-800 z-30 flex flex-col gap-8 ${sidebar.isSidebarOpen ? "translate-x-0" : "translate-x-full"} transition-transform ease-in-out border-l border-border`}
         >
             <div className="border-b border-border h-16 w-full flex justify-between items-center px-6">
                 <Logo />
