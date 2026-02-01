@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="en" class="transition-none theme:transition-colors theme:duration-500 theme:ease-in-out scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-  </head>
-  <body>
-    <div id="root" class="w-full bg-background text-foreground">
-      Internal Server Error 505
-    </div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+</head>
+
+<body>
+  <div id="loader" style="text-align: center; position: absolute; top: 0; width: 100%;">Loading</div>
+  <div id="root" class="invisible w-full bg-background text-foreground">
+  </div>
+  <script type="module" src="/src/main.jsx"></script>
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("loader").style.opacity = 0;
+      document.getElementById("root").classList.remove("invisible");
+    })
+  </script>
+</body>
+
 </html>
