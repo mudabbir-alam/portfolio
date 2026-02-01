@@ -22,7 +22,7 @@ function Sidebar() {
             </div>
             <nav className="flex flex-col gap-6 px-6">
                 {navItems.map((item, index) => (
-                    <a href={`#${item.id}`} key={item.id} className="bg-background px-4 py-2 rounded-lg text-lg font-medium hover:bg-slate-200 dark:hover:bg-slate-700">
+                    <a href={`#${item.id}`} key={item.id} onClick={sidebar.toggleSidebar} className="bg-background px-4 py-2 rounded-lg text-lg font-medium hover:bg-slate-200 dark:hover:bg-slate-700">
                         {item.name}
                     </a>
                 ))}
