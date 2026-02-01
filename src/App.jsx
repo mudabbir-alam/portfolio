@@ -2,12 +2,20 @@ import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const SidebarContext = createContext();
 
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+    useEffect(() => {
+        if (isSidebarOpen) {
+        document.body.style.overflow = "hidden";
+        }
+        else {
+            document.body.style.overflow = "auto";        }
+    }, [isSidebarOpen])
+
     function toggleSidebar() {
         setIsSidebarOpen((i) => !i);
     }
