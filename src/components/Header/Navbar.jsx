@@ -4,7 +4,7 @@ import NavItems from "./NavItems.jsx";
 
 function Navbar() {
     const [darkMode, setDarkMode] = useState(false);
-    function toggleTheme(event) {
+    function toggleTheme() {
         setDarkMode(d => !d);
     }
     useEffect(() => {
