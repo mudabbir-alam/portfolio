@@ -15,7 +15,7 @@ function Hero() {
                 </p>
                 <div id="hero-buttons-container" className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full my-8">
                     <Button href="#selected-projects" label="View Projects" className="bg-primary text-white hover:bg-primary/90"/>
-                    <Button label="Download CV" className="bg-white dark:bg-background hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors border-border border-2"/>
+                    <Button href="#" label="Download CV" className="bg-white dark:bg-background hover:bg-slate-50 dark:hover:bg-slate-600 transition-colors border-border border-2"/>
                 </div>
             </div>
             <div id="hero-right" className="w-full aspect-square flex items-center justify-center">
