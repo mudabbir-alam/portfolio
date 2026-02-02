@@ -102,7 +102,7 @@ function Contact() {
                         rows="4"
                         className="col-span-2 bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
                     ></textarea>
-                    <Button label="Send Message" className="bg-primary text-white hover:bg-primary/90 col-span-2" type="submit"/>
+                    <Button label="Send Message" className="bg-primary text-white hover:bg-primary/90 col-span-2" onClick={handleSubmit}/>
                 </form>
             </div>
         </section>
