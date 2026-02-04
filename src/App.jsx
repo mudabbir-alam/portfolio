@@ -59,7 +59,7 @@ function App() {
                     <Header />
                     <Main />
                     <Footer />
-                    {/* <Skeleton /> */}
+                    <Skeleton count={4}/>
                 </div>
             </>
         </SidebarContext.Provider>
