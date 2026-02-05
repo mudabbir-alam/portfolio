@@ -195,7 +195,7 @@ Project Link: [https://github.com/mudabbir-alam/portfolio](https://github.com/mu
 - [React Documentation](https://react.dev/)
 - [TailwindCSS](https://tailwindcss.com/)
 - [EmailJS](https://www.emailjs.com/)
-- Icons from [Google Fonts]
+- Icons from Google Fonts
 - Inspiration from various portfolio designs
 - Design by [Stitch](https://stitch.withgoogle.com)
 

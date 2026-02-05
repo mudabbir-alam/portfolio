@@ -100,7 +100,7 @@ function Contact() {
                         onChange={handleChange}
                         placeholder="Your message"
                         rows="4"
-                        className="col-span-2 bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
+                        className="col-span-2 bg-background text-foreground dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
                     ></textarea>
                     <Button label="Send Message" className="bg-primary text-white hover:bg-primary/90 col-span-2" onClick={handleSubmit}/>
                 </form>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function ProjectCard({name = "Title", labels = ["label"], description = "Created with Love and Joy", bgImage = ""}) {
+function ProjectCard({name = "Title", labels = ["label"], description = "Created with Love and Joy", bgImage = "", demoURL = "#", sourceURL = "#"}) {
     return (
         <div className="bg-white transition-all duration-200 dark:bg-slate-800 rounded-2xl group hover:shadow-xl border-2 border-border">
             <div className="aspect-video rounded-t-2xl overflow-hidden bg-slate-500">
@@ -16,18 +16,18 @@ function ProjectCard({name = "Title", labels = ["label"], description = "Created
                     {description}
                 </p>
                 <div className="grid grid-cols-2 justify-between gap-4">
-                    <button className="bg-primary py-3 rounded-lg text-white font-bold flex justify-center items-center gap-2 hover:cursor-pointer hover:bg-primary/90">
+                    <a href={demoURL} className="bg-primary py-3 rounded-lg text-white font-bold flex justify-center items-center gap-2 hover:cursor-pointer hover:bg-primary/90">
                         <span className="material-symbols-outlined text-lg">
                             visibility
                         </span>
                         <span className="text-sm">Live Demo</span>
-                    </button>
-                    <button className="border-border border dark: py-3 rounded-lg text-foreground font-bold flex justify-center items-center gap-2 hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700 bg-background">
+                    </a>
+                    <a href={sourceURL} className="border-border border dark: py-3 rounded-lg text-foreground font-bold flex justify-center items-center gap-2 hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-700 bg-background">
                         <span className="material-symbols-outlined text-lg">
                             code
                         </span>
                         <span className="text-sm">Source</span>
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>

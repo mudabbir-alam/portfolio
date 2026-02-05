@@ -17,18 +17,24 @@ function SelectedProjects() {
                     bgImage="bg-[url('/Portfolio.png')]"
                     description="A modern, performance-optimized portfolio website built with React and Tailwind CSS, featuring responsive design and smooth UI interactions."
                     labels={["React", "Tailwind"]}
+                    demoURL="https://mudabbir-alam.github.io/portfolio/"
+                    sourceURL="https://github.com/mudabbir-alam/portfolio"
                 />
                 <ProjectCard
                     name="Portfolio"
                     bgImage="bg-[url('/Portfolio.png')]"
                     description="A modern, performance-optimized portfolio website built with React and Tailwind CSS, featuring responsive design and smooth UI interactions."
                     labels={["React", "Tailwind"]}
+                    demoURL="https://mudabbir-alam.github.io/portfolio/"
+                    sourceURL="https://github.com/mudabbir-alam/portfolio"
                 />
                 <ProjectCard
                     name="Portfolio"
                     bgImage="bg-[url('/Portfolio.png')]"
                     description="A modern, performance-optimized portfolio website built with React and Tailwind CSS, featuring responsive design and smooth UI interactions."
                     labels={["React", "Tailwind"]}
+                    demoURL="https://mudabbir-alam.github.io/portfolio/"
+                    sourceURL="https://github.com/mudabbir-alam/portfolio"
                 />
             </div>
         </section>
