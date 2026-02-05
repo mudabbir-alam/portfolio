@@ -24,7 +24,8 @@ function App() {
                     document.fonts.load('700 1em "Material Icons"'),
                 ]);
                 console.log("Fonts Loaded");
-                // setIsLoading(false);
+                await new Promise(resolve => setTimeout(resolve, 300));
+                setIsLoading(false);
             } catch (error) {
                 console.error("Error", error);
             }
@@ -48,14 +49,6 @@ function App() {
     function toggleSidebar() {
         setIsSidebarOpen((i) => !i);
     }
-
-    setTimeout(() => {
-        setIsLoading(false);
-    }, 10000);
-
-    // if (isLoading) {
-    //     return <div>Loading...</div>;
-    // }
 
     return (
         <LoadingContext.Provider value={{isLoading}}>
