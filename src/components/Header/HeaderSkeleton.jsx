@@ -10,10 +10,10 @@ function HeaderSkeleton() {
             >
                 <div className="logo-container flex gap-2 items-center justify-between">
                     <Skeleton width="34px" height="34px" />
-                    <Skeleton width="124px" />
+                    <Skeleton width="124px" height="1rem"/>
                 </div>
                 <nav className="w-96 items-center justify-between gap-8 hidden md:flex">
-                    <Skeleton count={5} className="flex-1" />
+                    <Skeleton count={5} className="flex-1 h-4" />
                 </nav>
                 <div className="flex gap-4">
                     <Skeleton width="32px" height="32px" />

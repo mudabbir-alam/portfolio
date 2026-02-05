@@ -5,8 +5,10 @@ import Footer from "./components/Footer/Footer.jsx";
 import SidebarOverlay from "./components/Main/SidebarOverlay.jsx";
 import { createContext, useEffect, useState } from "react";
 import Skeleton from "./Skeleton.jsx";
+import HeaderSkeleton from "./components/Header/HeaderSkeleton.jsx";
 
 export const SidebarContext = createContext();
+export const LoadingContext = createContext();
 
 function App() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -22,7 +24,7 @@ function App() {
                     document.fonts.load('700 1em "Material Icons"'),
                 ]);
                 console.log("Fonts Loaded");
-                setIsLoading(false);
+                // setIsLoading(false);
             } catch (error) {
                 console.error("Error", error);
             }
@@ -47,22 +49,27 @@ function App() {
         setIsSidebarOpen((i) => !i);
     }
 
-    if (isLoading) {
-        return <div>Loading...</div>;
-    }
+    setTimeout(() => {
+        setIsLoading(false);
+    }, 10000);
+
+    // if (isLoading) {
+    //     return <div>Loading...</div>;
+    // }
 
     return (
-        <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
-            <>
-                <SidebarOverlay />
-                <div id="body" className="w-full min-h-screen font-inter">
-                    <Header />
-                    <Main />
-                    <Footer />
-                    <Skeleton count={4}/>
-                </div>
-            </>
-        </SidebarContext.Provider>
+        <LoadingContext.Provider value={{isLoading}}>
+            <SidebarContext.Provider value={{ isSidebarOpen, toggleSidebar }}>
+                <>
+                    <SidebarOverlay />
+                    <div id="body" className="w-full min-h-screen font-inter">
+                        {isLoading ? <HeaderSkeleton /> : <Header />}
+                        <Main />
+                        <Footer />
+                    </div>
+                </>
+            </SidebarContext.Provider>
+        </LoadingContext.Provider>
     );
 }
 
