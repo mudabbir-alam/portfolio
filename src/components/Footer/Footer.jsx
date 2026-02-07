@@ -1,12 +1,10 @@
 import React from "react";
-import Logo from "../Header/Logo";
 import { LoadingContext } from "../../App.jsx";
 import { useContext } from "react";
 import FooterSkeleton from "./FooterSkeleton.jsx";
 
 function Footer() {
     const loading = useContext(LoadingContext).isLoading;
-    console.log(loading);
     if (loading) return <FooterSkeleton />;
     return (
         <footer className=" border-t border-t-border w-full py-12">

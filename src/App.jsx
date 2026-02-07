@@ -4,7 +4,6 @@ import Main from "./components/Main/Main.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import SidebarOverlay from "./components/Main/SidebarOverlay.jsx";
 import { createContext, useEffect, useState } from "react";
-import Skeleton from "./Skeleton.jsx";
 import HeaderSkeleton from "./components/Header/HeaderSkeleton.jsx";
 
 export const SidebarContext = createContext();

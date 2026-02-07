@@ -10,7 +10,7 @@ function TechStackSkeleton() {
         {[1, 2, 3, 4].map((i) => (
           <div
             key={i}
-            className="p-6 bg-slate-100 rounded-xl border border-border"
+            className="p-6 bg-slate-100 dark:bg-slate-800 rounded-xl border border-border"
           >
             <Skeleton className="w-12 h-12 mb-4" />
             <Skeleton className="h-4 w-24 mb-2" />

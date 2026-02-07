@@ -5,16 +5,25 @@ import { useContext } from "react";
 import { SidebarContext } from "../../App.jsx";
 
 function Navbar() {
-    const [darkMode, setDarkMode] = useState(false);
+    const [darkMode, setDarkMode] = useState(() => {
+        return localStorage.getItem("darkmode") !== null;
+    });
     function toggleTheme() {
-        setDarkMode(d => !d);
+        darkMode
+            ? localStorage.removeItem("darkmode")
+            : localStorage.setItem("darkmode", true);
+        setDarkMode((d) => !d);
+        console.log(localStorage);
     }
+
     useEffect(() => {
-        document.documentElement.classList.toggle("dark", darkMode);     
+        const html = document.documentElement;
+        darkMode ? html.classList.add("dark") : html.classList.remove("dark");
     }, [darkMode]);
 
     useEffect(() => {
-        document.documentElement.classList.add("theme");
+        const html = document.documentElement;
+        html.classList.add("theme");
     }, []);
 
     return (
@@ -24,11 +33,17 @@ function Navbar() {
                 <NavItems />
             </div>
             <div className="flex gap-4 items-center justify-end h-4/5">
-                <button onClick={toggleTheme} className="flex justify-center items-center bg-background px-2 rounded-lg border border-border hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 w-8 h-8 material-symbols-outlined">
+                <button
+                    onClick={toggleTheme}
+                    className="flex justify-center items-center bg-background px-2 rounded-lg border border-border hover:cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 w-8 h-8 material-symbols-outlined"
+                >
                     {darkMode ? "light_mode" : "dark_mode"}
                 </button>
-                <button className="block md:hidden material-symbols-outlined text-2xl h-8 w-8 cursor-pointer" onClick={useContext(SidebarContext).toggleSidebar}>
-                        menu
+                <button
+                    className="block md:hidden material-symbols-outlined text-2xl h-8 w-8 cursor-pointer"
+                    onClick={useContext(SidebarContext).toggleSidebar}
+                >
+                    menu
                 </button>
             </div>
         </div>

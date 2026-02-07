@@ -12,6 +12,14 @@
   <div id="root" class="w-full bg-background text-foreground">
   </div>
   <script type="module" src="/src/main.jsx"></script>
+  <script>
+    try {
+      if (localStorage.getItem("darkmode")) {
+        document.documentElement.classList.add("dark");
+      }
+    }
+    catch (error) { }
+  </script>
 </body>
 
 </html>

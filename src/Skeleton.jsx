@@ -11,7 +11,7 @@ function Skeleton({
     return Array.from({ length: count }, (_, i) => (
         <div
             key={i}
-            className={`animate-shimmer my-2 bg-size-[200%_100%] bg-linear-to-r from-slate-100 via-slate-200 to-slate-100 ${className}`}
+            className={`animate-shimmer my-2 bg-size-[200%_100%] bg-linear-to-r dark:from-slate-900 dark:via-slate-600 dark:to-slate-900 from-slate-100 via-slate-200 to-slate-100 ${className}`}
             style={{
                 animationDuration: duration,
                 borderRadius: borderRadius,
