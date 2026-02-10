@@ -21,21 +21,35 @@ function Contact() {
     function handleSubmit(e) {
         e.preventDefault();
         e.stopPropagation();
-
-        emailjs
-        .send(
-            import.meta.env.VITE_EMAIL_SERVICE_ID,
-            import.meta.env.VITE_EMAIL_TEMPLATE_ID,
-            formData,
-            import.meta.env.VITE_EMAIL_PUBLIC_KEY
-        )
-        .then(() => {
-            alert("Message Sent Successfully");
-            setFormData({first_name: "", last_name: "", email: "", message: "",});
-        })
-        .catch(() => {
-            alert("Failed to send the message");
-        });
+        if (
+            formData.first_name.trim() !== "" &&
+            formData.last_name.trim() !== "" &&
+            formData.last_name.trim() !== "" &&
+            formData.message.trim() !== ""
+        ) {
+            emailjs
+                .send(
+                    import.meta.env.VITE_EMAIL_SERVICE_ID,
+                    import.meta.env.VITE_EMAIL_TEMPLATE_ID,
+                    formData,
+                    import.meta.env.VITE_EMAIL_PUBLIC_KEY,
+                )
+                .then(() => {
+                    alert("Message Sent Successfully");
+                    setFormData({
+                        first_name: "",
+                        last_name: "",
+                        email: "",
+                        message: "",
+                    });
+                })
+                .catch(() => {
+                    alert("Failed to send the message");
+                });
+        }
+        else {
+            alert("Please fill the required information correctly")
+        }
     }
 
     return (
@@ -64,7 +78,11 @@ function Contact() {
                         </span>
                     </div>
                 </div>
-                <form className="contact-right grid grid-cols-2 gap-4" onSubmit={handleSubmit} noValidate>
+                <form
+                    className="contact-right grid grid-cols-2 gap-4"
+                    onSubmit={handleSubmit}
+                    noValidate
+                >
                     <input
                         type="text"
                         name="first_name"
@@ -73,6 +91,7 @@ function Contact() {
                         onChange={handleChange}
                         placeholder="First name"
                         className="bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none col-span-2 sm:col-span-1"
+                        required
                     />
                     <input
                         type="text"
@@ -82,6 +101,7 @@ function Contact() {
                         onChange={handleChange}
                         placeholder="Last Name"
                         className="bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none col-span-2 sm:col-span-1"
+                        required
                     />
                     <input
                         type="email"
@@ -91,7 +111,7 @@ function Contact() {
                         id="email"
                         placeholder="Email Address"
                         className="col-span-2 bg-background dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
-                        
+                        required
                     />
                     <textarea
                         name="message"
@@ -101,8 +121,13 @@ function Contact() {
                         placeholder="Your message"
                         rows="4"
                         className="col-span-2 bg-background text-foreground dark:text-slate-300 p-3 border-2 border-border rounded-lg focus:border-primary outline-none"
+                        required
                     ></textarea>
-                    <Button label="Send Message" className="bg-primary text-white hover:bg-primary/90 col-span-2" onClick={handleSubmit}/>
+                    <Button
+                        label="Send Message"
+                        className="bg-primary text-white hover:bg-primary/90 col-span-2"
+                        onClick={handleSubmit}
+                    />
                 </form>
             </div>
         </section>
